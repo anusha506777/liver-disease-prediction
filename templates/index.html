@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liver Disease Prediction</title>
+</head>
+<body>
+  <h2>Enter Patient Details</h2>
+  <form method="POST" action="/predict">
+    Age: <input type="number" name="Age"><br>
+    Gender (Male=1, Female=0): <input type="number" name="Gender"><br>
+    Total Bilirubin: <input type="text" name="Total_Bilirubin"><br>
+    Direct Bilirubin: <input type="text" name="Direct_Bilirubin"><br>
+    Alkaline Phosphotase: <input type="text" name="Alkaline_Phosphotase"><br>
+    Alamine Aminotransferase: <input type="text" name="Alamine_Aminotransferase"><br>
+    Aspartate Aminotransferase: <input type="text" name="Aspartate_Aminotransferase"><br>
+    Total Proteins: <input type="text" name="Total_Protiens"><br>
+    Albumin: <input type="text" name="Albumin"><br>
+    Albumin and Globulin Ratio: <input type="text" name="Albumin_and_Globulin_Ratio"><br>
+    <input type="submit" value="Predict">
+  </form>
+
+  {% if prediction %}
+    <h3>Prediction: {{ prediction }}</h3>
+  {% endif %}
+</body>
+</html>
